@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"> 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="js/script.js"></script>
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <a href="Home.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="Visualizza.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>VISUALIZZA</p>
+  </a>
+  <a href="Riepilogo.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-users w3-xxlarge"></i>
+    <p>RIEPILOGO</p>
+  </a>
+  <a href="Aggiungi.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-plus w3-xxlarge"></i>
+    <p>AGGIUNGI</p>
+  </a>
+  <a href="Assegna.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-laptop w3-xxlarge"></i>
+    <p>ASSEGNA SITO</p>
+  </a>
+  <a href="Stats.php" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-bar-chart-o w3-xxlarge"></i>
+    <p>STATS</p>
+  </a>
+  <a href="Logout.php" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-times w3-xxlarge"></i>
+    <p>LOG OUT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="Home.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="Visualizza.html" class="w3-bar-item w3-button" style="width:25% !important">VISUALIZZA</a>
+    <a href="Riepilogo.html" class="w3-bar-item w3-button" style="width:25% !important">RIEPILOGO</a>
+    <a href="Aggiungi.html" class="w3-bar-item w3-button" style="width:25% !important">AGGIUNGI</a>
+    <a href="Assegna.html" class="w3-bar-item w3-button" style="width:25% !important">ASSEGNA SITO</a>
+    <a href="Stats.php" class="w3-bar-item w3-button" style="width:25% !important">STATS</a>
+    <a href="logout.php" class="w3-bar-item w3-button" style="width:25% !important">LOG OUT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Administrator</span> Area</h1>
+    <p>manage all the websites</p>
+    <!--<img src="img/Bonzzu-Webworld_prev.jpg" alt="boy" class="w3-image" width="992" height="701">-->
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <hr style="width:200px" class="w3-opacity">
+      <h3>Visualizza le informazioni su...</h3>
+
+          <div class="tab" width='100%'>
+            <button class="tablinks" onclick="openTable(event, '1')">Sviluppatore</button>
+            <button class="tablinks" onclick="openTable(event, '2')">Layout</button>
+            <button class="tablinks" onclick="openTable(event, '3')">Modulo</button>
+          </div>
+
+          <div id="1" class="tabcontent">
+          <span onclick="this.parentElement.style.display='none'" class="topright">chiudi</span>
+            <table id="sviluppatore" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>P.IVA</th>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Telefono</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>P.IVA</th>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Telefono</th>
+                    </tr>
+                </tfoot>
+            </table>
+          </div>
+
+          <div id="2" class="tabcontent">
+          <span onclick="this.parentElement.style.display='none'" class="topright">chiudi</span>
+            <table id="layout" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Costo</th>
+                        <th>Sviluppatore</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Costo</th>
+                        <th>Sviluppatore</th>
+                    </tr>
+                </tfoot>
+            </table>
+          </div>
+
+          <div id="3" class="tabcontent">
+          <span onclick="this.parentElement.style.display='none'" class="topright">chiudi</span>
+            <table id="modulo" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Funzione</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Funzione</th>
+                        <th>Costo</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+  <hr>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+<script>
+function openTable(evt, tableName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace("active", "");
+    }
+    document.getElementById(tableName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+$(document).ready( function() {
+
+  $.ajax({
+            type: "GET",
+            url: "check.php",
+            data: {},
+            success: function(data){
+              console.log(data);
+              if(data==0){
+                  window.location.replace("index.html");
+              }
+              else{
+                if (!data=="A"){
+                  window.location.replace("index.html");
+                }    
+              }
+          }
+  });
+
+  $('#sviluppatore').DataTable( {
+    "sAjaxSource": "DataTable_Sviluppatore.php",
+    "bFilter": true,
+        "dom": "Bfrtip",
+        "responsive": true,
+        "bDestroy": true,         
+        "aoColumns": [
+             
+            { "mData": "PIVA" },
+            { "mData": "NOME"}, 
+            { "mData": "COGNOME" },
+            { "mData": "TELEFONO"},
+        ],
+        
+    });
+
+  $('#layout').DataTable( {
+    "sAjaxSource": "DataTable_Layout.php",
+    "bFilter": true,
+        "dom": "Bfrtip",
+        "responsive": true,
+        "bDestroy": true,         
+        "aoColumns": [
+             
+            { "mData": "ID" },
+            { "mData": "COSTO_TOTALE"}, 
+            { "mData": "SVILUPPATORE" },
+        ],
+        
+    });
+
+  $('#modulo').DataTable( {
+    "sAjaxSource": "DataTable_Modulo.php",
+    "bFilter": true,
+    "dom": "Bfrtip",
+    "responsive": true,
+    "bDestroy": true,         
+    "aoColumns": [
+         
+        { "mData": "ID" },
+        { "mData": "NOME"}, 
+        { "mData": "FUNZIONE" },
+        { "mData": "COSTO"},
+    ],
+        
+    });
+} )
+</script>
+</body>
+</html>
+
+s
